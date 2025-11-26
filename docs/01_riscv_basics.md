@@ -277,10 +277,11 @@ if (s0 == s1) goto target;
 
 ## 8. 점프와 함수 호출: `jal` / `jalr`
 
-### 8.1 기본 아이디어
+### 8.1 j / jr pseudo 명령어
 
-- `j label`  → 실제 명령: `jal zero, label`  
-- `jr rs`    → 실제 명령: `jalr zero, rs, 0`
+- `j label`  → 실제 명령: `jal x0, label`
+- `jr x`     → 실제 명령: `jalr x0, x, 0`  
+  - 예: `jr ra` 는 `jalr x0, ra, 0` 과 동일 (함수 리턴)
 
 함수 호출:
 
