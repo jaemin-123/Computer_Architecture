@@ -3,28 +3,28 @@
 ## 1. 레지스터와 이름
 
 RISC-V는 32개의 32비트 정수 레지스터를 가진다.  
-이들을 x0 ~ x31로 부르지만, 관용적으로 별칭을 사용한다.
+이들을 x0 ~ x31로 구성 되어있다.
 
 ### 1.1 주요 레지스터 그룹
 
-- `x0` : `zero`  
+- `zero`  
   - 항상 0인 읽기 전용 레지스터
-- `x1` : `ra` (return address)  
+- `ra` (return address)  
   - 함수 호출 후 되돌아갈 PC 저장
-- `x2` : `sp` (stack pointer)  
+- `sp` (stack pointer)  
   - 스택의 최상단 주소
-- `x3` : `gp` (global pointer)
-- `x4` : `tp` (thread pointer)
+- `gp` (global pointer)
+- `tp` (thread pointer)
 
-- `x5 ~ x7, x28 ~ x31` : `t0 ~ t6` (temp)  
+- `t0 ~ t6` (temp)  
   - 임시 레지스터, **caller-saved**  
   - 호출하는 쪽에서 필요하면 저장
 
-- `x8, x9, x18 ~ x27` : `s0 ~ s11` (saved)  
+- `s0 ~ s11` (saved)  
   - 보존 레지스터, **callee-saved**  
   - 함수 안에서 쓰면, 원래 값 저장 후 복구해야 함
 
-- `x10 ~ x17` : `a0 ~ a7` (argument)  
+- `a0 ~ a7` (argument)  
   - 함수 인자 / 반환값
   - `a0, a1` : 반환값 주로 사용
 
